@@ -1,13 +1,13 @@
-
 import Layout from '../components/Layout';
 
 export default function Contact() {
-  return (
-    <Layout>
-      <section style={{ padding: '2rem' }}>
-        <h2>Contact</h2>
-        <p>Email me at <a href="mailto:me@rajanadendla.com">me@rajanadendla.com</a></p>
-      </section>
-    </Layout>
-  );
+  return <Layout>
+    <h1>Contact Me</h1>
+    <form action="https://formspree.io/f/your-form-id" method="POST">
+      <input type="text" name="name" placeholder="Your name" required />
+      <input type="email" name="email" placeholder="Your email" required />
+      <textarea name="message" placeholder="Your message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </Layout>;
 }
