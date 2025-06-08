@@ -1,8 +1,9 @@
+
 export default function Hero() {
   return (
-    <section className="container">
-      <h1>Hi, I'm Raja 👋</h1>
-      <p>I build intelligent products that scale—focused on AI, Search, and delightful digital experiences.</p>
+    <section style={{ padding: '4rem', textAlign: 'center' }}>
+      <h1>Hi, I'm Raja Nadendla</h1>
+      <p>A Product Leader, AI Enthusiast, and Problem Solver.</p>
     </section>
-  )
+  );
 }
