@@ -1,10 +1,8 @@
 export default function Blog() {
   return (
-    <main className="p-6 font-sans">
+    <div className="text-white">
       <h1 className="text-3xl font-bold mb-4">Blog</h1>
-      <p className="text-md text-gray-600">
-        Stay tuned for thoughtful insights on Search, AI, LLMs, and Product Management.
-      </p>
-    </main>
+      <p className="text-gray-400">This is the blog page. More content coming soon.</p>
+    </div>
   );
 }
