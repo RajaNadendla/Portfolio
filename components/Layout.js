@@ -1,30 +1,28 @@
-import Link from 'next/link';
 import Head from 'next/head';
+import Link from 'next/link';
 import { useState, useEffect } from 'react';
 
 export default function Layout({ children }) {
-  const [darkMode, setDarkMode] = useState(false);
-  useEffect(() => { document.documentElement.classList.toggle('dark', darkMode); }, [darkMode]);
+  const [dark, setDark] = useState(false);
+  useEffect(() => {
+    document.body.className = dark ? 'dark' : '';
+  }, [dark]);
 
   return (
-    <div className="min-h-screen font-sans bg-white dark:bg-gray-900 dark:text-white">
+    <div>
       <Head>
         <title>Raja Nadendla</title>
-        <meta name="description" content="Portfolio of Raja Nadendla - Search PM, AI Enthusiast" />
+        <meta name="description" content="Portfolio of Raja Nadendla - AI & Search Product Manager" />
       </Head>
-      <nav className="p-4 bg-gray-100 dark:bg-gray-800 flex justify-between">
-        <div><strong>Raja Nadendla</strong></div>
-        <div className="space-x-4">
-          <Link href="/">Home</Link>
-          <Link href="/about">About</Link>
-          <Link href="/projects">Projects</Link>
-          <Link href="/blog">Blog</Link>
-          <Link href="/contact">Contact</Link>
-          <button onClick={() => setDarkMode(!darkMode)}>{darkMode ? '☀️' : '🌙'}</button>
-        </div>
+      <nav>
+        <Link href="/">Home</Link>{' | '}
+        <Link href="/about">About</Link>{' | '}
+        <Link href="/projects">Projects</Link>{' | '}
+        <Link href="/blog">Blog</Link>{' | '}
+        <Link href="/contact">Contact</Link>
+        <button onClick={() => setDark(!dark)} style={{ float: 'right' }}>{dark ? '☀️' : '🌙'}</button>
       </nav>
-      <main className="p-8">{children}</main>
-      <footer className="text-center py-4 text-sm text-gray-600 dark:text-gray-400">© {new Date().getFullYear()} Raja Nadendla</footer>
+      <main>{children}</main>
     </div>
   );
 }
