@@ -26,3 +26,13 @@ export default function Layout({ children }) {
     </div>
   );
 }
+import Navbar from './Navbar';
+
+export default function Layout({ children }) {
+  return (
+    <>
+      <Navbar />
+      <main>{children}</main>
+    </>
+  );
+}
