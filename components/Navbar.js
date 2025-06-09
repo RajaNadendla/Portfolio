@@ -39,7 +39,7 @@ export default function Navbar() {
 
       <Link href="/contact">Contact</Link>
 
-      <button onClick={() => document.body.classList.toggle('dark')}>Toggle Theme</button>
+      <button onClick={toggleDark}>{isDark ? '☀️ Light' : '🌙 Dark'}</button>
 
       <style jsx>{`
         .navbar {
